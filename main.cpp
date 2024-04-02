@@ -2,19 +2,19 @@
 #include <typeinfo>
 #include <limits>
 
-int getSize(int value) {
+unsigned short getSize(int value) {
     return sizeof value;
 }
 
-int getSize(float value) {
+unsigned short getSize(float value) {
     return sizeof value;
 }
 
-int getSize(bool value) {
+unsigned short getSize(bool value) {
     return sizeof value;
 }
 
-int getSize(int* value) {
+unsigned short getSize(int* value) {
     return sizeof value;
 }
 
@@ -30,7 +30,7 @@ int main() {
     int valInt = 0;
     float valFloat = 0.0;
     bool valBool = true;
-    int *valPointer = &valInt;
+    int* valPointer = &valInt;
     std::cout << "Size of int is: " << getSize(valInt) << std::endl;
     std::cout << "Size of float is: " << getSize(valFloat) << std::endl;
     std::cout << "Size of boolean is: " << getSize(valBool) << std::endl;

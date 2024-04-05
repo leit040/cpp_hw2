@@ -1,40 +1,24 @@
 #include <iostream>
-#include <typeinfo>
-#include <limits>
 
-unsigned short getSize(int value) {
-    return sizeof value;
-}
+using namespace std;
 
-unsigned short getSize(float value) {
-    return sizeof value;
-}
-
-unsigned short getSize(bool value) {
-    return sizeof value;
-}
-
-unsigned short getSize(int* value) {
-    return sizeof value;
+void revertArray(int *arr, int size)
+{
+    for (int i = 0; i < size / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[size - i - 1];
+        arr[size - i - 1] = temp;
+    }
 }
 
 int main() {
-    std::cout << typeid(1).name() << std::endl;
-    std::cout << typeid(5.).name() << std::endl;
-
-     std::cout << "Min int: " << std::numeric_limits<int>::min() << std::endl;
-     std::cout << "Max float: " << std::numeric_limits<float>::max() << std::endl;
-     std::cout << "Float is signed: " <<  std::numeric_limits<float>::is_signed << std::endl;
-     std::cout << "Int is signed: " <<std::numeric_limits<int>::is_signed << std::endl;
-  //hw3
-    int valInt = 0;
-    float valFloat = 0.0;
-    bool valBool = true;
-    int* valPointer = &valInt;
-    std::cout << "Size of int is: " << getSize(valInt) << std::endl;
-    std::cout << "Size of float is: " << getSize(valFloat) << std::endl;
-    std::cout << "Size of boolean is: " << getSize(valBool) << std::endl;
-    std::cout << "Size of pointer is: " << getSize(valPointer) << std::endl;
+    int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+    revertArray(arr, sizeof(arr) / sizeof(arr[0]));
+    std::cout << "[ ";
+    for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++) {
+       std::cout << arr[i] << ", ";
+           }
+    std::cout << "\b\b ]"<<endl;
 
     return 0;
 }

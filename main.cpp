@@ -17,9 +17,10 @@ int main() {
     calculate.calc(10,5,'/');
     std::cout << "Result: " << calculate.getValue() << std::endl;
 
-    calculate.calc(100,'+');
-    std::cout << "Result: " << calculate.getValue() << std::endl;
-
+    std::cout << "Result: " << calculate.calc(100,'+') << std::endl;
+    std::cout << "Result: " << calculate.calc(100,'-') << std::endl;
+    std::cout << "Result: " << calculate.calc(100,'*') << std::endl;
+    std::cout << "Result: " << calculate.calc(100,'/') << std::endl;
 
 
 

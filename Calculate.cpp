@@ -41,28 +41,34 @@ void Calculate::calc(const int first,const int second, const char operand)
     }
 }
 
-void Calculate::calc(const int val, const char operand){
+int Calculate::calc(const int val, const char operand){
     switch (operand){
         case '+':
             value += val;
-            break;
+            return value;
+
         case '-':
             value -= val;
-            break;
+            return value;
+
         case '*':
             value *= val;
-            break;
+            return value;
+
         case '/':
             if(val){
                 value /= val;
-                break;
+                return value;
+
             } else{
                 std::cout << "Warning: Division by zero !!!"  << std::endl;
+                return value;
                 break;
             }
 
         default:
             std::cout << "Warning: Please choose only + - * /"  << std::endl;
+            return value;
             break;
     }
 }

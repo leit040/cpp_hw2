@@ -11,7 +11,7 @@ public:
     int getValue();
     void reset();
     void calc(const int first,const int second, const char operand);
-    void calc(const int first, const char operand);
+    int calc(const int first, const char operand);
 
 };
 

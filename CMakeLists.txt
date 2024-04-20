@@ -3,4 +3,6 @@ project(hw2)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(main main.cpp)
+add_executable(main main.cpp
+        Player.cpp Game.cpp BotPlayer.cpp HumanPlayer.cpp
+)

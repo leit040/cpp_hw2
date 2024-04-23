@@ -3,7 +3,7 @@
 #include <ctime>
 BotPlayer::BotPlayer(std::string botName):Player(botName)
 {}
-int BotPlayer::action()
+int BotPlayer::action() const
 {
     srand(static_cast<unsigned int>(std::time(0)));
     return (rand() % 3) + 1;

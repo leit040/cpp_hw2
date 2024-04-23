@@ -1,7 +1,4 @@
 #pragma once
-#ifndef HW2_GAME_H
-#define HW2_GAME_H
-#include "Player.h"
 #include "BotPlayrer.h"
 #include "HumanPlayer.h"
 class Game
@@ -23,4 +20,4 @@ private:
 
 
 
-#endif //HW2_GAME_H
+

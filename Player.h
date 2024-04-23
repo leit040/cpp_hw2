@@ -1,6 +1,4 @@
 #pragma once
-#ifndef HW2_PLAYER_H
-#define HW2_PLAYER_H
 #include <string>
 class Player
 {
@@ -14,7 +12,7 @@ public:
     std::string getName();
     int getWinsCount();
     void increaseWinsCounter();
-    virtual int action() = 0;
+    virtual int action() const = 0;
 
 };
-#endif //HW2_PLAYER_H
+

@@ -2,7 +2,7 @@
 #include <iostream>
 HumanPlayer::HumanPlayer(std::string playerName): Player(playerName)
 {}
-int HumanPlayer::action()
+int HumanPlayer::action() const
 {
     int choice;
     do {

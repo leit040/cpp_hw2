@@ -18,6 +18,9 @@ void createGame()
 
     Game game = Game(first,second);
     game.gameTour(roundCounts);
+
+    delete first;
+    delete second;
 }
 
 int main()

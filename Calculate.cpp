@@ -1,8 +1,6 @@
-//
-// Created by leit on 12.04.24.
-//
 #include <iostream>
 #include "Calculate.h"
+
 
 Calculate::Calculate(){
     reset();
@@ -17,16 +15,16 @@ void Calculate::reset(){
 void Calculate::calc(const int first,const int second, const char operand)
 {
     switch (operand){
-        case '+':
+        case ADDITION:
             value =  first + second;
             break;
-        case '-':
+        case SUBTRACTION:
             value =  first - second;
             break;
-        case '*':
+        case MULTIPLY:
             value =  first * second;
             break;
-        case '/':
+        case DIVISION:
             if(second){
                 value = first / second;
                 break;
@@ -39,36 +37,36 @@ void Calculate::calc(const int first,const int second, const char operand)
             std::cout << "Warning: Please choose only + - * /"  << std::endl;
             break;
     }
+
 }
 
-int Calculate::calc(const int val, const char operand){
+Calculate&  Calculate::calc(const int val, const char operand){
     switch (operand){
-        case '+':
+        case ADDITION:
             value += val;
-            return value;
+            break;
 
-        case '-':
+        case SUBTRACTION:
             value -= val;
-            return value;
+            break;
 
-        case '*':
+        case MULTIPLY:
             value *= val;
-            return value;
+            break;
 
-        case '/':
+        case DIVISION:
             if(val){
                 value /= val;
-                return value;
+                break;
 
             } else{
                 std::cout << "Warning: Division by zero !!!"  << std::endl;
-                return value;
                 break;
             }
 
         default:
             std::cout << "Warning: Please choose only + - * /"  << std::endl;
-            return value;
             break;
     }
+    return *this;
 }

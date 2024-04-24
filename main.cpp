@@ -5,24 +5,7 @@ using namespace std;
 
 int main() {
   Calculate calculate;
-    calculate.calc(10,10,'+');
-    std::cout << "Result: " << calculate.getValue() << std::endl;
-    calculate.reset();
-    calculate.calc(20,5,'-');
-    std::cout << "Result: " << calculate.getValue() << std::endl;
-    calculate.reset();
-    calculate.calc(2,5,'*');
-    std::cout << "Result: " << calculate.getValue() << std::endl;
-    calculate.reset();
-    calculate.calc(10,5,'/');
-    std::cout << "Result: " << calculate.getValue() << std::endl;
-
-    std::cout << "Result: " << calculate.calc(100,'+') << std::endl;
-    std::cout << "Result: " << calculate.calc(100,'-') << std::endl;
-    std::cout << "Result: " << calculate.calc(100,'*') << std::endl;
-    std::cout << "Result: " << calculate.calc(100,'/') << std::endl;
-
-
-
+    int result = calculate.calc(2,'+').calc(4,'-').calc(5,'*').getValue();
+    std::cout << "Result: " << result << std::endl;
     return 0;
 }
